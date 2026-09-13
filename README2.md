@@ -82,9 +82,10 @@ Each stage transforms and optimizes the design while checking important:
 
 The final **GDSII file** represents the physical layout of the chip.
 
-<img src="images/Screenshot-2026-09-13-003852.png" alt="Sky130 Module 5" width="900">
 
-<img src="images/Screenshot%202026-09-13%20003852.png" alt="Sky130 Module 5" width="900">
+
+<img width="1277" height="683" alt="Screenshot 2026-09-13 003852" src="https://github.com/user-attachments/assets/6ffd61dd-0949-4fc5-bd74-8055a3577713" />
+
 
 ## Sky130 PDK
 
@@ -214,6 +215,11 @@ The objective is to position cells while optimizing:
 
 The placement process starts with an initial placement and progressively optimizes the positions of cells while considering estimated interconnect effects.
 
+
+
+<img width="1170" height="694" alt="Screenshot 2026-09-13 005511" src="https://github.com/user-attachments/assets/e1a6b0d0-cb7e-4e03-a735-60f0a4512bcb" />
+
+
 ## Standard-Cell Libraries and Characterization
 
 A **standard-cell library** contains pre-designed and pre-characterized cells that can be used to implement digital logic.
@@ -281,6 +287,10 @@ Then:
 7. The characterized data is added to the standard-cell library.
 
 This information is required by EDA tools during the ASIC design flow.
+
+
+<img width="1190" height="662" alt="Screenshot 2026-09-13 010111" src="https://github.com/user-attachments/assets/b7e7762c-62b0-4a27-822f-8a41f6af9fe7" />
+
 
 ## Timing Characterization
 
@@ -376,6 +386,11 @@ The generated floorplan can be viewed and inspected using **Magic**, an open-sou
 ```bash
 magic -T <tech_file> <def_file>
 ```
+
+<img width="1036" height="725" alt="Screenshot 2026-09-13 214710" src="https://github.com/user-attachments/assets/ac3fefe6-a669-4aa6-b1b8-5093577ac856" />
+
+
+
 # Sky130 Module 3 – Design Library Cell Using Magic Layout and ngspice Characterization
 
 ## Introduction
@@ -506,6 +521,10 @@ Source and drain regions are formed on either side of the gate.
 Contacts and metal layers are then used to connect the devices to `VDD`, `GND`, input, and output.
 
 Understanding this process helps in understanding how the physical layout represents the actual CMOS circuit.
+
+
+<img width="1111" height="684" alt="Screenshot 2026-09-13 215232" src="https://github.com/user-attachments/assets/7815fbed-a5c3-40f6-8cdb-da02a0bab0c2" />
+
 
 ## Design Rule Checking
 
