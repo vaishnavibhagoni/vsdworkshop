@@ -1,3 +1,4 @@
+
 # Physical Design
 
 This section presents the practical implementation of the **VSDBabySoC** design through the different stages of digital ASIC physical design, beginning with synthesis and continuing through routing and timing verification.
@@ -31,53 +32,59 @@ The main objective of this lab is to understand the complete physical implementa
 
 Synthesis is the starting point for physical implementation: RTL is mapped into library cells, producing a netlist and implementation database for downstream steps. The package includes a synthesis output screenshot and configuration screenshots that show the design setup used in the OpenROAD flow.
 
-![Synthesis evidence](images/01_synthesis_output.png)
 
-Configuration evidence: [`design_config_mk.png`](images/design_config_mk.png), [`flow_configuration_clock_floorplan.png`](images/flow_configuration_clock_floorplan.png), and [`pll_library_timing_configuration.png`](images/pll_library_timing_configuration.png).
+
+<img width="1920" height="848" alt="01_synthesis_output" src="https://github.com/user-attachments/assets/e77227da-0d04-4d5a-a36a-283a2f4d7012" />
+
+
 
 ### 2. Floorplan
 
 The floorplan establishes the die/core organization, margins, and a starting arrangement for physical implementation. The included GUI screenshots show the floorplan and a saved database view.
 
-![Floorplan GUI](images/02_floorplan_gui.png)
+<img width="1920" height="865" alt="02_floorplan_gui" src="https://github.com/user-attachments/assets/fc550b56-7e51-42a1-a4c6-180d283a4e51" />
 
-![Floorplan database view](images/02_floorplan_database.png)
+<img width="1592" height="843" alt="02_floorplan_database" src="https://github.com/user-attachments/assets/b03151bd-3a02-4983-90f3-9c4f12580e4e" />
 
 ### 3. Placement
 
 Placement assigns locations to standard cells. The supplied views include a full placement view, alternate layer and terminal views, and a zoomed-out view. These are useful for observing the physical arrangement at different scales; they are not, by themselves, a numeric placement-quality report.
 
-![Placement](images/03_placement_gui.png)
 
-Additional evidence: [`03_placement_layer_view.png`](images/03_placement_layer_view.png), [`03_placement_terminal_view.png`](images/03_placement_terminal_view.png), and [`03_placement_zoomed_out.png`](images/03_placement_zoomed_out.png).
+
+<img width="1920" height="900" alt="03_placement_gui" src="https://github.com/user-attachments/assets/5adfee8f-db92-4ef1-b9b1-5eac48181743" />
+
+
 
 ### 4. Clock-tree synthesis
 
 CTS creates a network to distribute the clock to sequential elements. The lab screenshots contain full-design and close-up views of the resulting layout, as well as a selected clock-buffer instance. The images document inspection of the clock network, but no numerical clock-skew summary was supplied.
 
-![CTS full view](images/04_cts_fullview.png)
 
-![CTS clock-buffer detail](images/cts_clock_buffer_detail.jpeg)
+<img width="1600" height="814" alt="04_cts_fullview" src="https://github.com/user-attachments/assets/c18046d8-ec3e-4941-8f99-f765d5d19cee" />
 
-Additional evidence: [`04_cts_closeup.png`](images/04_cts_closeup.png), [`04_cts_gui_view.png`](images/04_cts_gui_view.png), [`04_cts_zoomed_view.png`](images/04_cts_zoomed_view.png), and [`cts_power_density_view.jpeg`](images/cts_power_density_view.jpeg).
+<img width="1600" height="546" alt="cts_clock_buffer_detail" src="https://github.com/user-attachments/assets/adcacb41-7273-430b-9ad7-816f2da7ecc7" />
 
 ### 5. Routing
 
 Routing connects the placed instances using the available interconnect layers and vias. The supplied images show both a whole-design routing view and a more detailed view of the metal geometry.
 
-![Routing full view](images/05_routing_full_view.png)
 
-![Routing detailed view](images/08_routing_detailed_view.png)
+<img width="1595" height="870" alt="05_routing_full_view" src="https://github.com/user-attachments/assets/c6ce9105-160c-44a4-a2eb-893d474bd018" />
 
-A close-up congestion/metal view is also included as [`placement_congestion_detail.jpeg`](images/placement_congestion_detail.jpeg). The supplied package does not include an authoritative route summary file from which to report total wire length, via count, DRC count, or antenna violations; those numeric fields are therefore intentionally not inferred.
+<img width="1920" height="885" alt="08_routing_detailed_view" src="https://github.com/user-attachments/assets/8c731f39-3d37-43ab-b011-1cd1e6842c25" />
+
+
+ The supplied package does not include an authoritative route summary file from which to report total wire length, via count, DRC count, or antenna violations; those numeric fields are therefore intentionally not inferred.
 
 ### 6. OpenSTA timing review
 
 The supplied OpenSTA screenshots show timing-path reports for a maximum-delay (setup-oriented) path and a minimum-delay (hold-oriented) path.
 
-![Setup timing evidence](images/06_opensta_setup_timing.png)
 
-![Hold timing evidence](images/07_opensta_hold_timing.png)
+<img width="1920" height="903" alt="06_opensta_setup_timing" src="https://github.com/user-attachments/assets/e95be340-e277-478d-82f7-15423cc5cfb7" />
+
+<img width="1920" height="883" alt="07_opensta_hold_timing" src="https://github.com/user-attachments/assets/acce7f62-a64f-447f-aa1f-3d8f2cb80ed9" />
 
 The screenshots visibly show positive slack values for the displayed paths:
 - Setup-oriented path: **7.35 slack (MET)**.
@@ -85,41 +92,6 @@ The screenshots visibly show positive slack values for the displayed paths:
 
 These are the slack values shown for the individual paths in the provided images, not a complete worst-slack summary for every path in the design. The accompanying reference notes report `WNS max = 0.00` and `TNS max = 0.00`; those values are preserved in the dedicated OpenSTA report as notes from the reference context, rather than being substituted for the path slack shown in the screenshots. To establish a single definitive timing summary, rerun/report the design using the exact final timing database, constraints, and parasitics.
 
-## Reports index
-
-| Report | Purpose |
-|---|---|
-| [`01_Synthesis_Report.md`](reports/01_Synthesis_Report.md) | Synthesis purpose, evidence, and output interpretation |
-| [`02_Floorplan_Report.md`](reports/02_Floorplan_Report.md) | Floorplan organization and visual evidence |
-| [`03_Placement_Report.md`](reports/03_Placement_Report.md) | Standard-cell placement observations |
-| [`04_CTS_Report.md`](reports/04_CTS_Report.md) | Clock-tree synthesis and clock-buffer inspection |
-| [`05_Routing_Report.md`](reports/05_Routing_Report.md) | Routed connectivity and design-view evidence |
-| [`06_OpenSTA_Report.md`](reports/06_OpenSTA_Report.md) | Setup/hold timing commands and the values visible in screenshots |
-| [`timing_summary.md`](reports/timing_summary.md) | Compact timing snapshot with evidence caveats |
-
-## Folder layout
-
-```text
-PD_Lab_Work_Package/
-├── README.md
-├── images/
-│   ├── 01_synthesis_output.png
-│   ├── 02_floorplan_gui.png
-│   ├── 03_placement_gui.png
-│   ├── 04_cts_fullview.png
-│   ├── 05_routing_full_view.png
-│   ├── 06_opensta_setup_timing.png
-│   ├── 07_opensta_hold_timing.png
-│   └── ...additional supplied views...
-└── reports/
-    ├── 01_Synthesis_Report.md
-    ├── 02_Floorplan_Report.md
-    ├── 03_Placement_Report.md
-    ├── 04_CTS_Report.md
-    ├── 05_Routing_Report.md
-    ├── 06_OpenSTA_Report.md
-    └── timing_summary.md
-```
 
 ## Tools and concepts encountered
 
