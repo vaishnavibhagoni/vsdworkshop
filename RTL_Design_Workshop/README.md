@@ -15,11 +15,6 @@ This repository documents the practical work completed across five modules. Each
 | [Module 3](./Module%203) | Combinational and Sequential RTL Optimizations | ✅ Completed |
 | [Module 4](./Module%204) | Gate-Level Simulation, Blocking vs. Non-Blocking Assignments, and Synthesis–Simulation Mismatch | ✅ Completed |
 | [Module 5](./Module%205) | `if`/`case` Coverage, Latch Avoidance, and `for`/`generate` Constructs | ✅ Completed |
-| [LabWork_RTL&GLS & Test](./lab%20work%20RLC_GLS_DAC) | RTL-to-Gate-Level Flow, MUX Design, GLS, Standard-Cell Analysis, and VSD BabySoC | ✅ Completed |
-| [Physical Design](./PD) | Open-Source EDA, OpenLane, SKY130 PDK, Floorplanning, Library Cells, and Timing Characterization | ✅ Completed |
-| [PD Lab Work](./PD_Lab_Work) | Physical-design lab exercises, floorplanning, standard-cell placement, and layout review | ✅ Completed |
-| [STA All Corners](./STA_All_Corners) | Multi-corner static timing analysis, setup/hold WNS and TNS, timing reports, and result visualization | ✅ Completed |
-| [Water Pump Dry-Run Controller](./Water_Pump_Dry_Run_Controller) | Verilog RTL project for a water-pump dry-run protection controller | ✅ Added |
 
 ---
 
@@ -30,11 +25,6 @@ RTL_Design_Workshop/
 │
 ├── README.md
 │
-├── Water_Pump_Dry_Run_Controller/
-│   ├── Water_Pump_Dry_Run_Controller/
-│   │   └── README.md
-│   └── flow/
-│       └── ...
 │
 ├── Module 1/
 │   ├── README.md
@@ -71,34 +61,6 @@ RTL_Design_Workshop/
     │   └── ...
     └── images/
 
-├── lab work RLC_GLS_DAC/
-├── LabWork_RTL&GLS & Test/
-│   ├── README.md
-│   └── screenshots/
-│       ├── *.jpeg
-│       ├── *.jpg
-│       └── *.png
-│
-├── PD/
-│   ├── README.md
-│   ├── Module 1/
-│   │   ├── README.md
-│   │   └── images/
-│   └── Module 2/
-│       ├── README.md
-│       └── images/
-│
-├── PD_Lab_Work/
-│   ├── README.md
-│   └── supporting lab files and images/
-│
-└── STA_All_Corners/
-    ├── README.md
-    ├── STA_All_Corners_Report.pdf
-    ├── corner_summary.csv
-    ├── corners/
-    ├── graphs/
-    └── logs/
 ```
 
 ---
@@ -181,10 +143,6 @@ Demonstrates how incomplete conditional descriptions can infer unintended hardwa
 
 ---
 
-### Lab Work — VLSI Design and Synthesis
-
-The lab work documents the practical application of RTL-to-gate-level VLSI design concepts, including Verilog RTL design, simulation, synthesis, technology mapping, Gate-Level Simulation (GLS), standard-cell library analysis, and VSD BabySoC synthesis and verification.
-
 **Key areas:**
 - Complete RTL-to-gate-level VLSI design flow
 - Verilog RTL coding and testbench development
@@ -202,37 +160,6 @@ The lab work documents the practical application of RTL-to-gate-level VLSI desig
 - BabySoC synthesis and synthesis statistics
 - BabySoC netlist inspection
 - Pre-synthesis and post-synthesis comparison
-
-**Lab Work Structure:**
-
-```text
-lab work RLC_GLS_DAC/
-LabWork_RTL&GLS & Test/
-│
-├── README.md
-│
-└── screenshots/
-    ├── final Practical Flow.jpeg
-    ├── File_structures.jpeg
-    ├── Design hierarchy.jpeg
-    ├── mux_code.jpeg
-    ├── good_mux_simulation.jpeg
-    ├── Good_mux.jpeg
-    ├── Good_mux technology mapped .jpeg
-    ├── post_synthesis.jpeg
-    ├── comparison of goodmux & badmux.jpeg
-    ├── GLS pre_synth.jpeg
-    ├── checking the gate.jpeg
-    ├── Lekeage power information.jpeg
-    ├── vsdbaby_soc.jpeg
-    ├── rv_myth.jpeg
-    ├── test_bench file.jpeg
-    ├── Baby_soc synthesized design.jpeg
-    ├── BabySoC Synthesis Statistics.jpeg
-    ├── Baby_Soc_simulation _soc_netlist.jpeg
-    ├── Baby_Soc_simulation _soc2_netlist.jpeg
-    └── Comparion post_pre.jpeg
-```
 
 #### Lab Work Flow
 
@@ -301,212 +228,16 @@ This work is organized separately from the five RTL modules and the RTL lab work
 - Metal-layer inspection
 - Standard-cell placement
 
-#### Physical Design Structure
-
-```text
-PD/
-├── README.md
-├── Module 1/
-│   ├── README.md
-│   └── images/
-│       ├── Openlane.png
-│       ├── Synthesis_netlist.png
-│       ├── Technology_Specific.png
-│       ├── Tools_Specfic.png
-│       ├── chip_area.png
-│       ├── clock ratio&percentage.png
-│       └── overall_tech&tools.png
-│
-└── Module 2/
-    ├── README.md
-    └── images/
-        ├── Design_name.png
-        ├── floorplan.png
-        ├── magic_flooorplan_layout.png
-        ├── metal2.png
-        ├── metal3.png
-        └── placement_standard_cell.png
-```
-
-#### Module 1 — Inception of Open-Source EDA, OpenLane and Sky130 PDK
-
-Topics covered:
-
-- How to Talk to Computers
-- SoC Design and OpenLane
-- Getting Familiar with Open-Source EDA Tools
-
-[Open Physical Design Module 1 →](./PD/Module%201/README.md)
-[Open Physical Design Module 1 →](./Physical_Design/Module%201/README.md)
-
-#### Module 2 — Good Floorplan vs Bad Floorplan and Introduction to Library Cells
-
-Topics covered:
-
-1. Chip Floorplanning Considerations
-2. Utilization Factor and Aspect Ratio
-3. Cell Design and Characterization Flow
-4. General Timing Characterization Parameters
-
-[Open Physical Design Module 2 →](./PD/Module%202/README.md)
-
-[Open Physical Design Documentation →](./PD/README.md)
-[Open Physical Design Module 2 →](./Physical_Design/Module%202/README.md)
-
-[Open Physical Design Documentation →](./Physical_Design/README.md)
-
-
-
----
-
-### PD Lab Work — Physical Design Lab
-
-The PD Lab Work section records practical exercises in the physical-design flow, complementing the existing Physical Design modules.
-
-**Key areas:**
-- Open-source EDA tools and the OpenLane flow
-- Sky130 PDK and standard-cell libraries
-- Floorplanning and floorplan visualization
-- Utilization factor and aspect ratio
-- Standard-cell placement
-- Metal-layer and layout inspection
-- Cell characterization and timing concepts
-- Review of lab outputs and supporting images
-
-**PD Lab Work Structure:**
-
-```text
-PD_Lab_Work/
-├── README.md
-└── supporting lab files and images/
-```
-
-[Open PD Lab Work →](./PD_Lab_Work)
-
----
-
-### STA All Corners — Static Timing Analysis
-
-The STA All Corners work evaluates timing across multiple process, voltage, and temperature (PVT) operating corners. It organizes setup and hold results so timing behavior can be compared between corners.
-
-**Key areas:**
-- Multi-corner static timing analysis
-- PVT corner evaluation
-- Setup WNS and TNS
-- Hold WNS and TNS
-- Unconstrained-path reports
-- Per-corner timing reports and logs
-- CSV summary of corner results
-- Graphs for setup and hold metrics
-- Tcl scripts used in the STA flow
-
-**Reported summary:**
-- **Corners evaluated:** 16
-- **Corners with negative setup WNS:** 6
-- **Corners with negative hold WNS:** 0
-- **Worst setup WNS:** −30.7252 ns at `ss_n40C_1v28`
-- **Best setup WNS:** +8.0138 ns at `ff_100C_1v95`
-- **Worst hold WNS:** +0.1916 ns at `ff_n40C_1v95`
-
-A negative setup WNS indicates a setup-timing violation at that corner. All reported hold WNS values are positive in this result set.
-
-**STA All Corners Structure:**
-
-```text
-STA_All_Corners/
-├── README.md
-├── STA_All_Corners_Report.pdf
-├── corner_summary.csv
-├── corners/
-│   └── <corner_name>/
-│       ├── setup.rpt
-│       ├── hold.rpt
-│       ├── unconstrained.rpt
-│       ├── run_sta.tcl
-│       └── sta_full.log
-├── graphs/
-│   ├── setup_wns.png
-│   ├── setup_tns.png
-│   ├── hold_wns.png
-│   └── hold_tns.png
-└── logs/
-    ├── sta_run.log
-    └── vsdbabysoc_all_corners_fixed.tcl
-```
-
-[Open STA All Corners Work →](./STA_All_Corners)
-
----
-
-### Water Pump Dry-Run Controller — Verilog RTL Project
-
-This project adds an application-focused RTL design to the workshop repository: a **water-pump dry-run controller** intended to support protection against pump operation without an adequate water supply. The project files and any included flow material are available in the dedicated project directory.
-
-**Project highlights:**
-- Verilog RTL implementation for the water-pump controller
-- A practical digital-design application alongside the workshop exercises
-- Project documentation and supporting implementation/flow files, where included
-
-**Project directory:** [Open Water Pump Dry-Run Controller →](./Water_Pump_Dry_Run_Controller)
-
-**Project README:** [Read the project documentation →](./Water_Pump_Dry_Run_Controller/Water_Pump_Dry_Run_Controller/README.md)
-
----
-
-## Source Code
-
-Each module now contains a dedicated `src/` directory containing the Verilog source files corresponding to the designs documented in that module.
-
-The source files are intended to make the repository directly usable for:
-- RTL simulation
-- Testbench execution
-- Synthesis experiments
-- Gate-level simulation
-- Reviewing different coding styles
-- Comparing RTL with synthesized implementations
-
-The screenshots in the `images/` directories provide supporting evidence for the code, simulation waveforms, and synthesis/netlist observations documented in the module READMEs.
-
----
-
-## Tools and Technologies
-
-- **Verilog HDL** — RTL design and hardware description
-- **Icarus Verilog (`iverilog`)** — RTL and gate-level simulation
-- **GTKWave** — Simulation waveform visualization
-- **Yosys** — RTL synthesis and logic optimization
-- **Sky130 Standard-Cell Library (`.lib`)** — Standard-cell timing and synthesis experiments
-
----
-
-## Learning Outcomes
-
-By completing this workshop, the following RTL design concepts were practiced:
-
-1. Writing synthesizable Verilog RTL.
-2. Building and running Verilog testbenches.
-3. Simulating combinational and sequential designs.
-4. Understanding basic synthesis flow.
-5. Reading synthesized logic and netlist representations.
-6. Understanding timing-library usage in synthesis.
-7. Comparing hierarchical and flat synthesis.
-8. Identifying inefficient RTL coding styles.
-9. Understanding synthesis optimizations.
-10. Recognizing common causes of simulation–synthesis mismatch.
-11. Avoiding unintended latch inference.
-12. Using `for` and `generate` constructs for scalable hardware descriptions.
 
 ---
 
 ## Author
 
-**Md Sohail Ahmed**  
+**Vaishnavi Bhagoni**  
 B.Tech — Electronics and Communication Engineering  
 Anurag University, Hyderabad
 
-- [GitHub](https://github.com/Sohail123-spec)
-- [Portfolio](https://sohail123-spec.github.io/sohail-portfolio/)
-- [LinkedIn](https://linkedin.com/in/contactmdsohailahmed)
+
 
 ---
 
